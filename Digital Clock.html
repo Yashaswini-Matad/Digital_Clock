@@ -1,0 +1,61 @@
+<!-- 3rd Jan 2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #time{
+            display: flex;
+            justify-content: center;
+        }
+
+        #time h1{
+            background: black;
+            width: 120px;
+            height: 120px;
+            color: white;
+            margin: 0px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+<body align="center">
+    <h1>Digital Clock in UI</h1>
+    <div id="time">
+        <h1 id="hr">10</h1>
+        <h1 id ="min">20</h1>
+        <h1 id="sec">07</h1>
+    </div>
+    
+    <h1 id="date">01/Jan/2024</h1>
+
+    <script>
+        function showCurrentTime() {
+            let current = new Date();
+
+            let hr = document.getElementById("hr");
+            let min = document.getElementById("min");
+            let sec = document.getElementById("sec");
+
+            hr.innerText = current.getHours();
+            min.innerText = current.getMinutes();
+            sec.innerText =current.getSeconds();
+
+            let date = document.getElementById("date");
+            date.innerText = current.toLocaleDateString();
+        }
+
+        setInterval(showCurrentTime, 1000);
+    </script>
+</body>
+</html>
